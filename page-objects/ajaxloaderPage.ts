@@ -10,10 +10,10 @@ export class AjaxLoaderPage {
   
     constructor(page: Page) {
         this.page = page;
-        this.clickMeButton = page.getByText('CLICK ME!');
-        this.buttonField = page.locator('#button1')
-        this.field1 = page.locator('#myDiv')
-        this.closePopupButon = page.getByRole('button', { name: 'Close' })
+        this.clickMeButton = page.locator('[data-target="#myModalClick"]');
+        this.buttonField = page.locator('div.modal-content');
+        this.field1 = page.locator('#myDiv');
+        this.closePopupButon = page.getByRole('button', { name: 'Close' });
     }
 
     async visit() {
@@ -23,18 +23,7 @@ export class AjaxLoaderPage {
     }
 
     async clickMe() {
-        await this.page.goto('http://www.webdriveruniversity.com/Ajax-Loader/index.html');
- 
-        await this.page.locator('[data-target="#myModalClick"]').click();
-        await expect(this.page.locator('div.modal-content')).toBeVisible();
-        
+        await this.clickMeButton.click();
+        await expect(this.buttonField).toBeVisible();
     }
-
-
-
-        
-
-
-
-    
 }
