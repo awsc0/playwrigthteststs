@@ -27,7 +27,6 @@ export class AutocompletePage {
     }
 
     async expectFoodItemInField(foodItem: string) {
-        const foodItemText = await this.foodItemField.inputValue();
         await expect (this.foodItemField).toHaveValue(foodItem);
     }
 }

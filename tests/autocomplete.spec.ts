@@ -8,6 +8,4 @@ test('Autocomplete Test', async ({ page }) => {
     
     await autocompletePage.expectFoodItemInField('Chips');
     await autocompletePage.submitForm();
-
-
 });

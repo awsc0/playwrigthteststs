@@ -1,7 +1,6 @@
 import { test, expect, type Locator, type Page } from '@playwright/test';
 import { DropdownPage } from '../page-objects/dropdownPage';
 
-
 test('Dropdown Menus', async ({ page }) => {
     const dropdownPage = new DropdownPage(page);
     await dropdownPage.visit()
@@ -56,8 +55,6 @@ test("Radio Buttons", async ({ page }) => {
 test("Selected and disabled", async ({ page }) => {
     const dropdownPage = new DropdownPage(page);
     await dropdownPage.visit()
-
     await dropdownPage.selectVegetable(dropdownPage.radioButtonLettuce)
     await dropdownPage.selectVegetable(dropdownPage.radioButtonPumpkin)
-    
 })

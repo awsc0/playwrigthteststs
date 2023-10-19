@@ -28,6 +28,8 @@ export class DatepickerPage {
     async setDate(date: Date) {
         const dateText = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
         await this.page.evaluate((date) => {
+          //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          //@ts-ignore
           $('#datepicker').datepicker('update', new Date(date))
         }, dateText)
       }

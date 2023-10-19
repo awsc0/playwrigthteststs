@@ -16,7 +16,6 @@ export class DropdownPage {
     readonly radioButtonPurple: Locator;
     readonly radioButtonLettuce: Locator;
     readonly radioButtonPumpkin: Locator;
-    
 
     constructor(page: Page) {
         this.page = page;
@@ -38,10 +37,8 @@ export class DropdownPage {
 
         this.radioButtonLettuce = page.locator('input[name="vegetable"]').first()
         this.radioButtonPumpkin = page.locator('input[name="vegetable"]').nth(2)
-        
-
-
     }
+
     async visit() {
         await this.page.goto('http://www.webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html') 
     }
@@ -80,9 +77,4 @@ export class DropdownPage {
         await expect(await radioButtonVegetable.isChecked()).toBe(true)
 
     }
-        
-    
-
-
-
 }
