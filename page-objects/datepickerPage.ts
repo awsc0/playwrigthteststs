@@ -1,6 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
-
 export class DatepickerPage {
     readonly page: Page;
     readonly openCalendarButton: Locator;
@@ -9,8 +8,6 @@ export class DatepickerPage {
     readonly datepickerPrewArrow: Locator;
     readonly datepickerNextArrow: Locator;
 
-
-
     constructor(page: Page) {
         this.page = page;
         this.openCalendarButton = page.locator('#datepicker span')
@@ -18,7 +15,6 @@ export class DatepickerPage {
         this.datepickerPrewArrow = page.getByRole('cell', { name: '«' });
         this.datepickerNextArrow = page.getByRole('cell', { name: '»' });
         this.datepicker = page.locator('#datepicker input')
-        
     }
 
     async visit() {
